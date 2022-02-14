@@ -1,3 +1,133 @@
 @import "./variables";
 @import "./globals";
 @import "./config";
+
+body {
+  background-image: url(../images/pattern-background-desktop.svg);
+  background-color: $Pale-blue;
+  background-repeat: no-repeat;
+  height: 100vh;
+  @include flexcenter(row);
+
+  @include mobile {
+    background-image: url(../images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+  }
+}
+
+.card {
+  font-family: $font-fam;
+  border: 1px solid transparent;
+  overflow: hidden;
+  border-radius: 20px;
+  max-width: 300px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  @include flexcenter(column);
+
+  .image {
+    height: 145px;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+
+  .order-summary {
+    background-color: white;
+    padding: 0 25px;
+
+    h1 {
+      text-align: center;
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: $Dark-blue;
+      padding: 25px 0;
+    }
+
+    p {
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 23px;
+      color: $Desaturated-blue;
+      padding-bottom: 25px;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  .order-plan {
+    border: 1px solid $Very-pale-blue;
+    border-radius: 1rem;
+    background-color: $Very-pale-blue;
+    @include flexcenter(row);
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 25px;
+
+    .plan-summary {
+      @include flexcenter(column);
+      h2 {
+        font-size: 0.8rem;
+        text-align: center;
+        font-weight: 900;
+        color: $Dark-blue;
+        padding-bottom: 5px;
+      }
+
+      span {
+        font-size: 0.8rem;
+        text-align: center;
+        font-weight: 700;
+        color: $Desaturated-blue;
+      }
+    }
+
+    a {
+      text-align: center;
+      padding: 5px;
+      font-size: 0.7rem;
+      color: $Bright-blue;
+      text-decoration: underline;
+      font-weight: 900;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .select-order {
+    @include flexcenter(column);
+
+    .proceed {
+      border: 1px solid $Bright-blue;
+      width: 100%;
+      padding: 13px 0;
+      font-family: $font-fam;
+      font-weight: 700;
+      background-color: $Bright-blue;
+      color: $Very-pale-blue;
+      border-radius: 0.5rem;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .proceed:hover {
+      opacity: 0.8;
+    }
+
+    .cancel {
+      border: none;
+      background-color: transparent;
+      color: $Desaturated-blue;
+      font-family: $font-fam;
+      font-size: 0.8rem;
+      text-align: center;
+      font-weight: 900;
+      margin-bottom: 30px;
+    }
+  }
+}
